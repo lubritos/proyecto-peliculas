@@ -2,12 +2,20 @@
   background-image: url("../imagenes/bg-image-1.jpg");
   width: 100%; }
 
+.carrito {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  z-index: 9;
+  background-color: #ffffff;
+  padding: 1rem;
+  max-height: 15rem; }
+
 #banner-2 {
+  width: 100%;
   background-color: #151515; }
   #banner-2 img {
-    width: 30rem; }
-  #banner-2 .contenido-banner-2 {
-    width: 75rem; }
+    max-width: 35rem; }
 
 .c-white {
   color: #f8f9fa; }
@@ -36,3 +44,13 @@
 #footer {
   background-color: #151515;
   height: 20rem; }
+
+@media only screen and (max-width: 900px) {
+  .contenido-banner-2 {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; }
+    .contenido-banner-2 img {
+      width: 100%; }
+    .contenido-banner-2 .descripcion {
+      width: 100%; } }
