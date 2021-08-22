@@ -3,13 +3,17 @@
     width: 100%;
 }
 .carrito {
+    display: none;
     position: absolute;
     top: 4rem;
     right: 1rem;
     z-index: 9;
     background-color: #ffffff;
+    color: #d81a24;
     padding: 1rem;
-    max-height: 15rem;
+}
+.fa-shopping-cart:hover ~ .carrito {
+    display: flex;
 }
 #banner-2 {
     // max-width: 1480px;
@@ -44,7 +48,7 @@
 }
 .carousel-2 {
     background-color: #f8f9fa;
-    height: 25rem;
+    ;height: 100%
 }
 #footer {
     background-color: #151515;
