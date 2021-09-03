@@ -18,10 +18,16 @@
 .descripcion-carrito {
   width: 10rem; }
 
+.btn-icon-cart {
+  cursor: pointer; }
+
 .carousel-item img {
   min-width: 16rem; }
 
-.fa-shopping-cart:hover ~ .carrito {
+.dd-input {
+  display: none; }
+
+.dd-input:checked ~ .carrito {
   display: flex; }
 
 #banner-2 {
