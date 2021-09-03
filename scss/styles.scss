@@ -1,7 +1,7 @@
 .bg-slider {
     background-image:url("../imagenes/bg-image-1.jpg");
     width: 100%;
-    padding: 7rem;
+    padding: 5rem;
 }
 .carrito {
     display: none;
@@ -12,6 +12,11 @@
     background-color: #ffffff;
     color: #d81a24;
     padding: 1rem;
+    overflow: hidden;
+    max-height: 30rem;
+}
+.descripcion-carrito{
+    width: 10rem;
 }
 .carousel-item {
     img {
