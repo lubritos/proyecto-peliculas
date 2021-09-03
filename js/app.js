@@ -61,7 +61,7 @@ const listaPeliculas = [
 const contenedor = document.getElementById('peliculas');
 
 const card = (pelicula) => {
-    return `<div class="card m-2" style="width: 18rem;">
+    return `<div class="card mx-2 my-4" style="width: 18rem;">
                 <img src="${pelicula.portada}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${pelicula.nombre}</h5>
@@ -69,7 +69,7 @@ const card = (pelicula) => {
                     <p>${pelicula.genero}</p>
                     <span>${pelicula.precio}</span>
                 </div>
-                <button onclick='agregarCarrito(${JSON.stringify(pelicula)})' class="btn btn-danger">
+                <button onclick='agregarCarrito(${JSON.stringify(pelicula)})' class="btn bg-red c-white roboto f-1">
                     Comprar
                 <button>
             </div>`;

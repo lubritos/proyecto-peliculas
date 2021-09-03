@@ -1,8 +1,12 @@
-const carrito = [];
+let peliculasGuardadas = localStorage.getItem('carrito');
+    peliculasGuardadas = JSON.parse(peliculasGuardadas);
+const carrito = peliculasGuardadas || [];
 
 const agregarCarrito = (pelicula) => {
     carrito.push(pelicula);
     actualizarCarrito();
+    saveStorage(carrito);
+    showToast('Pelicula Agregada');
     console.log('Pelicula agregada al carrito', pelicula);
 };
 
@@ -23,3 +27,9 @@ function actualizarCarrito() {
     }
     divCarrito.innerHTML = html2;
 }
+
+const saveStorage = (loqueguardo) => {
+    localStorage.setItem('carrito', JSON.stringify(loqueguardo));
+}
+
+actualizarCarrito();
