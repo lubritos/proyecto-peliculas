@@ -41,6 +41,13 @@
 .c-greey {
   color: #f8f8f8a2; }
 
+.card:hover .bg-cards {
+  display: block !important; }
+
+.bg-cards {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 2s; }
+
 #banner-3 {
   background-image: url("../imagenes/banner-3.jpg");
   color: #ffff;
@@ -53,7 +60,7 @@
       border: 1px solid transparent; }
 
 .bg-oscuro {
-  background-color: #151515; }
+  background-color: #151515 !important; }
 
 .bg-red {
   background-color: #d81a24 !important; }
@@ -63,6 +70,9 @@
 
 .roboto {
   font-family: "Roboto Slab", serif !important; }
+
+.bg-orange {
+  background-color: #fa4604 !important; }
 
 .carousel-2 {
   background-color: #f8f9fa;

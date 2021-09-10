@@ -1,18 +1,20 @@
 let peliculasGuardadas = localStorage.getItem('carrito');
     peliculasGuardadas = JSON.parse(peliculasGuardadas);
-const carrito = peliculasGuardadas || [];
+let carrito = peliculasGuardadas || [];
 
 const agregarCarrito = (pelicula) => {
     carrito.push(pelicula);
     actualizarCarrito(carrito);
     saveStorage(carrito);
     showToast('Pelicula Agregada');
+    cargarProductos(document.getElementById('peliculas'));
     console.log('Pelicula agregada al carrito', pelicula);
 };
 
 
 function actualizarCarrito(listado) {
     const divCarrito = document.getElementsByClassName('carrito')[0];
+    document.getElementById('carrito-contador').innerHTML = listado.length;
     let html2 = '';
     for (let i = 0; i < listado.length; i++) {
         html2 +=  `<div class="d-flex m-2 p-2 w-100 h-100 align-items-center justify-content-center">
@@ -44,11 +46,21 @@ const vaciarCarrito = (id) => {
         console.log('Eliminar', id);
         const carritoNuevo = carrito.filter((c,index) => index !== parseInt(id, 10) );
         saveStorage(carritoNuevo);
+        carrito = carritoNuevo;
         actualizarCarrito(carritoNuevo);
     } else {
         const divCarrito = document.getElementsByClassName('carrito')[0];
         divCarrito.innerHTML = '';
         localStorage.removeItem('carrito');
+        carrito = [];
+        actualizarCarrito(carrito);
     }
+    cargarProductos(document.getElementById('peliculas'));
+
+}
+
+const stockActual = (stock, nombre) => {
+    const listado = carrito.filter(pelicula => pelicula.nombre === nombre);
+    return stock - listado.length;
 }
 actualizarCarrito(carrito);
