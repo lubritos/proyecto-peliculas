@@ -1,3 +1,4 @@
+import { showToast } from './toast.js'
 let peliculasGuardadas = localStorage.getItem('carrito');
     peliculasGuardadas = JSON.parse(peliculasGuardadas);
 let carrito = peliculasGuardadas || [];
@@ -7,7 +8,6 @@ const agregarCarrito = (pelicula) => {
     actualizarCarrito(carrito);
     saveStorage(carrito);
     showToast('Pelicula Agregada');
-    cargarProductos(document.getElementById('peliculas'));
     console.log('Pelicula agregada al carrito', pelicula);
 };
 
@@ -24,7 +24,7 @@ function actualizarCarrito(listado) {
                             <span>${carrito[i].precio}</span>
                             <span>${carrito[i].genero}</span>
                         </div>
-                        <button onClick="vaciarCarrito('${i}')" class="btn btn-danger">Eliminar</button>
+                        <button data-id="${i}" data-nombre="${carrito[i].nombre}" class="btn eliminar btn-danger">Eliminar</button>
                     </div>
                     `;
     }
@@ -33,7 +33,7 @@ function actualizarCarrito(listado) {
         ${html2}
         <div class="acciones d-flex justify-content-between m-3">
             <button class="btn btn-warning text-white">Comprar</button>
-            <button onClick="vaciarCarrito()" class="btn btn-danger">Vaciar</button>
+            <button class="btn vaciar btn-danger">Vaciar</button>
         </div>
     </div>`;
 }
@@ -42,7 +42,7 @@ const saveStorage = (loqueguardo) => {
     localStorage.setItem('carrito', JSON.stringify(loqueguardo));
 }
 const vaciarCarrito = (id) => {
-    if (id){
+    if (id >= 0){
         console.log('Eliminar', id);
         const carritoNuevo = carrito.filter((c,index) => index !== parseInt(id, 10) );
         saveStorage(carritoNuevo);
@@ -55,7 +55,6 @@ const vaciarCarrito = (id) => {
         carrito = [];
         actualizarCarrito(carrito);
     }
-    cargarProductos(document.getElementById('peliculas'));
 
 }
 
@@ -64,3 +63,9 @@ const stockActual = (stock, nombre) => {
     return stock - listado.length;
 }
 actualizarCarrito(carrito);
+
+export {
+    stockActual,
+    agregarCarrito,
+    vaciarCarrito
+}

@@ -5,7 +5,7 @@ const showToast = (mensaje) => {
                     <div class="toast-body">
                         ${mensaje}
                     </div>
-                    <button onClick="hideToast()" type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
         </div>`;
@@ -14,4 +14,9 @@ const showToast = (mensaje) => {
 
 function hideToast() {
     document.getElementById('toast').innerHTML = '';
+}
+
+export {
+    showToast,
+    hideToast
 }

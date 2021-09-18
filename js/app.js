@@ -92,9 +92,9 @@ const card = (pelicula) => {
                     <span>${pelicula.precio}</span>
 
                 </div>
-                <button onclick='agregarCarrito(${JSON.stringify(pelicula)})' class="btn bg-orange c-white roboto f-1">
-                    Comprar (${stockActual(pelicula.stock, pelicula.nombre)}) 
-                <button>
+                <button data-pelicula="${pelicula.nombre}" class="btn btn-comprar bg-orange c-white roboto f-1">
+                    Comprar (${pelicula.stock})
+                </button>
             </div>`;
 }
 
@@ -115,4 +115,9 @@ for (let i=0; i < element.length; i++) {
     element[i].addEventListener('click', () => {
         video.src = `https://www.youtube.com/embed/${listaPeliculas[i].video}`;
     })
+}
+
+export {
+    cargarProductos,
+    listaPeliculas
 }
