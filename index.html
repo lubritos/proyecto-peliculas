@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css"/>
     <link rel="stylesheet" href="./css/styles.css"/>
 </head>
 <body>
@@ -48,64 +50,49 @@
             </div>
         </nav>
         <div class="bg-slider">
-            <div id="carouselExampleIndicators" class="carousel slide bg-carousel" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-evenly align-items-center">
-                            <div class="d-flex flex-column">
-                                <img src="./imagenes/slider-1.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it (2017)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror</span>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <img src="./imagenes/slider-2.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">Haunting of Hill House (2018)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror, Mistery</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-evenly align-items-center">
-                            <div class="d-flex flex-column">
-                                <img src="./imagenes/slider-3.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">First Man (2018)</span>
-                                <span class="text-uppercase c-white m-1">Drama, History </span>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <img src="./imagenes/slider-4.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">Black Mirror (2011)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Sci-Fi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-evenly align-items-center">
-                            <div class="d-flex flex-column">
-                                <img src="./imagenes/slider-5.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">Daredevil (2015)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Sci-Fi</span>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <img src="./imagenes/slider-6.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">Stranger Things (2016)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Fantasy, Horror</span>
-                            </div>
-                        </div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="d-flex flex-column">
+                        <img src="./imagenes/slider-1.jpg" class="d-block w-100" alt="...">
+                        <span class="text-uppercase c-white ml-1 mt-3">it (2017)</span>
+                        <span class="text-capitalize c-white ml-1 mt-2">Drama, Horror</span>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="item">
+                    <div class="d-flex flex-column">
+                        <img src="./imagenes/slider-2.jpg" class="d-block w-100" alt="...">
+                        <span class="text-uppercase c-white ml-1 mt-3">Haunting of Hill House (2018)</span>
+                        <span class="text-capitalize c-white ml-1 mt-2">Drama, Horror, Mistery</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="d-flex flex-column">
+                        <img src="./imagenes/slider-3.jpg" class="d-block w-100" alt="...">
+                        <span class="text-uppercase c-white ml-1 mt-3">First Man (2018)</span>
+                        <span class="text-capitalize c-white ml-1 mt-2">Drama, History </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="d-flex flex-column">
+                        <img src="./imagenes/slider-4.jpg" class="d-block w-100" alt="...">
+                        <span class="text-uppercase c-white ml-1 mt-3">Black Mirror (2011)</span>
+                        <span class="text-capitalize c-white ml-1 mt-2">Drama, Sci-Fi</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="d-flex flex-column">
+                        <img src="./imagenes/slider-5.jpg" class="d-block w-100" alt="...">
+                        <span class="text-uppercase c-white ml-1 mt-3">Daredevil (2015)</span>
+                        <span class="text-capitalize c-white ml-1 mt-2">Drama, Sci-Fi</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="d-flex flex-column">
+                        <img src="./imagenes/slider-6.jpg" class="d-block w-100" alt="...">
+                        <span class="text-uppercase c-white ml-1 mt-3">Stranger Things (2016)</span>
+                        <span class="text-capitalize c-white ml-1 mt-2">Drama, Fantasy, Horror</span>
+                    </div>
+                </div>
             </div>
     </header>
     <main>
@@ -175,11 +162,11 @@
                         <input type="text" class="input-email form-control-plaintext rounded py-2 px-3 " id="staticEmail2" placeholder="Ingresa tu Email">
                     </div>
                     <div class="subscribete mx-2">
-                        <button type="submit" class="bg-red mb-3 rounded py-2 px-3 c-white text-capitalize roboto">Subscribete</button>                    
+                        <button type="submit" class="btn text-uppercase fs-6 py-2 px-3 roboto">Subscribete</button>                    
                     </div>                   
                 </form>
                 <div id="mensaje">
-                    <p class="exitoso c-green fs-3 text-uppercase fw-bold">Gracias por suscribirte!!</p>
+                    <p class="exitoso c-green fs-6 text-uppercase fw-bold">Gracias por suscribirte..!!</p>
                     <p class="error visually-hidden text-danger fs-3 text-uppercase fw-bold">El email no es valido</p>
                 </div>
             </div>
@@ -255,7 +242,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="./js/owl.carousel.min.js"></script>
     <script type="module" src="./js/index.js"> </script>
-    
 </body>
 </html>
