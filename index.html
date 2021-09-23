@@ -59,15 +59,13 @@
                         <div class="d-flex justify-content-evenly align-items-center">
                             <div class="d-flex flex-column">
                                 <img src="./imagenes/slider-1.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it</span>
-                                <span class="text-uppercase c-white m-1">(2017)</span>
+                                <span class="text-uppercase c-white m-2">it (2017)</span>
                                 <span class="text-uppercase c-white m-1">Drama, Horror</span>
                             </div>
                             <div class="d-flex flex-column">
                                 <img src="./imagenes/slider-2.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it</span>
-                                <span class="text-uppercase c-white m-1">(2017)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror</span>
+                                <span class="text-uppercase c-white m-2">Haunting of Hill House (2018)</span>
+                                <span class="text-uppercase c-white m-1">Drama, Horror, Mistery</span>
                             </div>
                         </div>
                     </div>
@@ -75,15 +73,13 @@
                         <div class="d-flex justify-content-evenly align-items-center">
                             <div class="d-flex flex-column">
                                 <img src="./imagenes/slider-3.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it</span>
-                                <span class="text-uppercase c-white m-1">(2017)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror</span>
+                                <span class="text-uppercase c-white m-2">First Man (2018)</span>
+                                <span class="text-uppercase c-white m-1">Drama, History </span>
                             </div>
                             <div class="d-flex flex-column">
                                 <img src="./imagenes/slider-4.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it</span>
-                                <span class="text-uppercase c-white m-1">(2017)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror</span>
+                                <span class="text-uppercase c-white m-2">Black Mirror (2011)</span>
+                                <span class="text-uppercase c-white m-1">Drama, Sci-Fi</span>
                             </div>
                         </div>
                     </div>
@@ -91,15 +87,13 @@
                         <div class="d-flex justify-content-evenly align-items-center">
                             <div class="d-flex flex-column">
                                 <img src="./imagenes/slider-5.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it</span>
-                                <span class="text-uppercase c-white m-1">(2017)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror</span>
+                                <span class="text-uppercase c-white m-2">Daredevil (2015)</span>
+                                <span class="text-uppercase c-white m-1">Drama, Sci-Fi</span>
                             </div>
                             <div class="d-flex flex-column">
                                 <img src="./imagenes/slider-6.jpg" class="d-block w-100" alt="...">
-                                <span class="text-uppercase c-white m-2">it</span>
-                                <span class="text-uppercase c-white m-1">(2017)</span>
-                                <span class="text-uppercase c-white m-1">Drama, Horror</span>
+                                <span class="text-uppercase c-white m-2">Stranger Things (2016)</span>
+                                <span class="text-uppercase c-white m-1">Drama, Fantasy, Horror</span>
                             </div>
                         </div>
                     </div>
@@ -119,6 +113,14 @@
             <h1 class="text-center text-uppercase mt-3 mb-3 pt-3 pb-3 lh-lg roboto">
                 Peliculas disponibles para ver online
             </h1>
+            <div id="generos" class="d-flex flex-wrap m-3 justify-content-center">
+                <button id="horror" class="btn fs-4 roboto text-uppercase m-3 p-2"> terror</button>
+                <button id="action" class="btn fs-4 roboto text-uppercase m-3 p-2">accion</button>
+                <button id="adventure" class="btn fs-4 roboto text-uppercase m-3 p-2">aventura</button>
+                <button id="mistery" class="btn fs-4 roboto text-uppercase m-3 p-2">misterio</button>
+                <button id="fantasy" class="btn fs-4 roboto text-uppercase m-3 p-2">fantasia</button>
+                <button id="all" class="btn fs-4 roboto text-uppercase m-3 p-2">todos</button>
+            </div>
             <div 
                 id="peliculas"
                 class="disponible d-flex flex-wrap justify-content-center"
@@ -149,9 +151,6 @@
                             </p>
                         </div>
                     </div>
-                    <div>
-                        <button class="bg-red c-white rounded mb-2 py-2 px-3 text-capitalize roboto" type="button">añadir a lista</button>
-                    </div>
                 </div>
             </div>
         </section>
@@ -171,7 +170,7 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa laboriosam accusantium architecto fugiat quis voluptas nemo molestias aut, veniam quod expedita sequi veritatis deleniti atque, velit libero reiciendis praesentium maxime?
                 </p>
-                <form class="g-3 d-flex text-center">
+                <form id="suscripcion" action="formulario.html" class="g-3 d-flex text-center">
                     <div class="email-banner-3 mx-2">
                         <input type="text" class="input-email form-control-plaintext rounded py-2 px-3 " id="staticEmail2" placeholder="Ingresa tu Email">
                     </div>
@@ -179,6 +178,10 @@
                         <button type="submit" class="bg-red mb-3 rounded py-2 px-3 c-white text-capitalize roboto">Subscribete</button>                    
                     </div>                   
                 </form>
+                <div id="mensaje">
+                    <p class="exitoso c-green fs-3 text-uppercase fw-bold">Gracias por suscribirte!!</p>
+                    <p class="error visually-hidden text-danger fs-3 text-uppercase fw-bold">El email no es valido</p>
+                </div>
             </div>
         </section>
         <section class="carousel-2 mt-3 mb-3 d-flex align-items-center justify-content-evenly">
@@ -223,10 +226,10 @@
                     <span class="c-white fs-2">Movies</span>
                 </div>
                 <div id="redes">
-                    <i class="fab fa-facebook-f c-white m-3 f-2"></i>
-                    <i class="fab fa-twitter c-white m-3 f-2"></i>
-                    <i class="fab fa-pinterest-p c-white m-3 f-2"></i>
-                    <i class="far fa-envelope c-white m-3 f-2"></i>
+                    <i class="fab fa-facebook-f c-white m-3 fs-2"></i>
+                    <i class="fab fa-twitter c-white m-3 fs-2"></i>
+                    <i class="fab fa-pinterest-p c-white m-3 fs-2"></i>
+                    <i class="far fa-envelope c-white m-3 fs-2"></i>
                 </div>
             </div>
         </div>

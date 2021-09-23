@@ -30,6 +30,15 @@
 .dd-input:checked ~ .carrito {
   display: flex; }
 
+.btn {
+  color: #fa4604;
+  border-color: #fa4604; }
+  .btn:hover, .btn:focus {
+    background-color: #fa4604;
+    color: #ffffff;
+    transition: 1s;
+    box-shadow: none; }
+
 #banner-2 {
   width: 100%; }
   #banner-2 img {
@@ -67,6 +76,9 @@
 
 .bg-green {
   background-color: #7bc708 !important; }
+
+.c-green {
+  color: #7bc708 !important; }
 
 .roboto {
   font-family: "Roboto Slab", serif !important; }

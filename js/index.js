@@ -3,8 +3,8 @@ import './noticias.js'
 import { agregarCarrito, stockActual, vaciarCarrito } from './carrito.js';
 import { cargarProductos, listaPeliculas } from './app.js'
 
-
-$(`.btn-comprar`).on('click', function() {
+let suscriptores = [];
+$(`#peliculas`).on('click', '.btn-comprar',function() {
     const nombre = $(this).data('pelicula');
     const peliculaComprada = listaPeliculas.filter((peli) => peli.nombre === nombre);
     agregarCarrito(peliculaComprada[0]);
@@ -28,4 +28,38 @@ $('.carrito').on('click', '.eliminar' , function() {
 $('.carrito').on('click', '.vaciar' , function() {
     vaciarCarrito();
     cargarProductos(document.getElementById('peliculas'));
+});
+$('#mensaje').hide();
+$('#suscripcion').submit(function(evento){
+    evento.preventDefault();
+    const email = $('.input-email').val();
+    suscriptores.push(email);
+    localStorage.setItem('suscriptores', JSON.stringify(suscriptores));
+    $(this).removeClass('d-flex');
+    $(this).fadeOut();
+    $('#mensaje').show();
+});
+
+$('#horror').on('click', function() {
+    $('.card').fadeOut();
+    $('.horror').fadeIn();
+});
+$('#action').on('click', function() {
+    $('.card').fadeOut();
+    $('.action').fadeIn();
+});
+$('#adventure').on('click', function() {
+    $('.card').fadeOut();
+    $('.adventure').fadeIn();
+});
+$('#fantasy').on('click', function() {
+    $('.card').fadeOut();
+    $('.fantasy').fadeIn();
+});
+$('#mistery').on('click', function() {
+    $('.card').fadeOut();
+    $('.mistery').fadeIn();
+});
+$('#all').on('click', function() {
+    $('.card').fadeIn();
 });
