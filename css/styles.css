@@ -50,6 +50,9 @@
 .c-greey {
   color: #f8f8f8a2; }
 
+.c-orange {
+  color: #fa4604 !important; }
+
 .card:hover .bg-cards {
   display: block !important; }
 
