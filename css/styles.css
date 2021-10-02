@@ -30,10 +30,10 @@
 .dd-input:checked ~ .carrito {
   display: flex; }
 
-.btn {
+.btn-efect {
   color: #fa4604;
   border-color: #fa4604; }
-  .btn:hover, .btn:focus {
+  .btn-efect:hover, .btn-efect:focus {
     background-color: #fa4604;
     color: #ffffff;
     transition: 1s;
@@ -71,6 +71,9 @@
       background-color: rgba(246, 246, 246, 0.3);
       border: 1px solid transparent; }
 
+.w-input {
+  width: 20rem; }
+
 .bg-oscuro {
   background-color: #151515 !important; }
 
@@ -87,11 +90,17 @@
   font-family: "Roboto Slab", serif !important; }
 
 .bg-orange {
-  background-color: #fa4604 !important; }
+  background-color: #ec6635 !important; }
+
+.bg-ligthgrey {
+  background-color: rgba(246, 246, 246, 0.192) !important; }
 
 .carousel-2 {
   background-color: #f8f9fa;
   height: 100%; }
+
+.contacto {
+  height: 15rem; }
 
 #footer {
   height: 20rem; }

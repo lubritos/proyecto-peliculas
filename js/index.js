@@ -6,9 +6,9 @@ import { cargarProductos, listaPeliculas } from './app.js'
 let suscriptores = [];
 $(`#peliculas`).on('click', '.btn-comprar',function() {
     const nombre = $(this).data('pelicula');
-    const peliculaComprada = listaPeliculas.filter((peli) => peli.nombre === nombre);
+    const peliculaComprada = listaPeliculas.filter((peli) => peli.title === nombre);
     agregarCarrito(peliculaComprada[0]);
-    const stock = stockActual(peliculaComprada[0].stock, peliculaComprada[0].nombre);
+    const stock = stockActual(peliculaComprada[0].stock, peliculaComprada[0].title);
     $(this).text(`Comprar (${stock})`);
 });
 
@@ -19,10 +19,10 @@ $('#toast').on('click', '.btn-close', function() {
 $('.carrito').on('click', '.eliminar' , function() {
     const id = $(this).data('id');
     const nombre = $(this).data('nombre');
-    const peliculaComprada = listaPeliculas.filter((peli) => peli.nombre === nombre);
+    const peliculaComprada = listaPeliculas.filter((peli) => peli.title === nombre);
     vaciarCarrito(id);
-    const stock = stockActual(peliculaComprada[0].stock, peliculaComprada[0].nombre);
-    $(`[data-pelicula="${peliculaComprada[0].nombre}"]`).text(`Comprar (${stock})`);
+    const stock = stockActual(peliculaComprada[0].stock, peliculaComprada[0].title);
+    $(`[data-pelicula="${peliculaComprada[0].title}"]`).text(`Comprar (${stock})`);
 });
 
 $('.carrito').on('click', '.vaciar' , function() {

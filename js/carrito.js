@@ -18,13 +18,13 @@ function actualizarCarrito(listado) {
     let html2 = '';
     for (let i = 0; i < listado.length; i++) {
         html2 +=  `<div class="d-flex m-2 p-2 w-100 h-100 align-items-center justify-content-center">
-                        <img src="${carrito[i].portada}" class="rounded mx-auto d-block" alt="" width="60">
+                        <img src="https://image.tmdb.org/t/p/w500/${carrito[i].poster_path}" class="rounded mx-auto d-block" alt="" width="60">
                         <div class="d-flex flex-column m-3 descripcion-carrito">
-                            <h5>${carrito[i].nombre}</h5>
+                            <h5>${carrito[i].title}</h5>
                             <span>${carrito[i].precio}</span>
                             <span>${carrito[i].genero}</span>
                         </div>
-                        <button data-id="${i}" data-nombre="${carrito[i].nombre}" class="btn eliminar btn-danger">Eliminar</button>
+                            <i data-id="${i}" data-nombre="${carrito[i].title}"class="fw-bold fs-5 eliminar btn-danger fas fa-trash-alt"></i>
                     </div>
                     `;
     }
@@ -59,7 +59,7 @@ const vaciarCarrito = (id) => {
 }
 
 const stockActual = (stock, nombre) => {
-    const listado = carrito.filter(pelicula => pelicula.nombre === nombre);
+    const listado = carrito.filter(pelicula => pelicula.title === nombre);
     return stock - listado.length;
 }
 actualizarCarrito(carrito);
