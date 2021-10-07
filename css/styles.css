@@ -36,13 +36,15 @@
   .btn-efect:hover, .btn-efect:focus {
     background-color: #fa4604;
     color: #ffffff;
-    transition: 1s;
     box-shadow: none; }
 
 #banner-2 {
   width: 100%; }
   #banner-2 img {
     max-width: 35rem; }
+
+.c-red {
+  color: #d81a24; }
 
 .c-white {
   color: #f8f9fa !important; }
@@ -60,6 +62,10 @@
   background-color: rgba(0, 0, 0, 0.5);
   transition: 2s; }
 
+#carrito-contador {
+  right: -2%;
+  bottom: 20%; }
+
 #banner-3 {
   background-image: url("../imagenes/banner-3.jpg");
   color: #ffff;
@@ -71,8 +77,9 @@
       background-color: rgba(246, 246, 246, 0.3);
       border: 1px solid transparent; }
 
-.w-input {
-  width: 20rem; }
+.compra:hover {
+  background-color: #ec6635 !important;
+  color: #ffffff; }
 
 .bg-oscuro {
   background-color: #151515 !important; }
@@ -93,7 +100,7 @@
   background-color: #ec6635 !important; }
 
 .bg-ligthgrey {
-  background-color: rgba(246, 246, 246, 0.192) !important; }
+  background-color: rgba(246, 246, 246, 0.8) !important; }
 
 .carousel-2 {
   background-color: #f8f9fa;
@@ -101,6 +108,17 @@
 
 .contacto {
   height: 15rem; }
+  .contacto .item:hover {
+    color: #d81a24; }
+
+.form-contacto {
+  width: 100%; }
+
+.form-control {
+  color: #b7b7b7; }
+  .form-control:focus {
+    border-color: #b7b7b7 !important;
+    box-shadow: none !important; }
 
 #footer {
   height: 20rem; }

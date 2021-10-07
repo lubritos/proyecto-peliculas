@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/owl.carousel.min.css"/>
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css"/>
     <link rel="stylesheet" href="../css/styles.css"/>
 </head>
     <body>
@@ -25,10 +23,10 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse roboto" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse roboto align-items-center" id="navbarSupportedContent">
                         <ul class="navbar-nav w-100 d-flex fs-5">
                             <li class="nav-item d-flex">
-                                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                                <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
                             </li>
                             <li class="nav-item d-flex">
                                 <a class="nav-link" href="./catalogo">Catálogo</a>
@@ -41,14 +39,12 @@
                             </li>
                         </ul>
                         <div class="d-flex">
-                            <i class="fas fa-search c-white ms-2 mx-2 fs-4"></i>
+                            <i class="fas fa-search c-white ms-2 mx-2 fs-3"></i>
                             <label class="btn-icon-cart" for="cart">
-                                <div class="position-fixed bottom-50 end-0 bg-orange rounded-circle p-4">
-                                    <i class="fas fa-shopping-cart c-white ms-2 mx-2 fs-4"></i>
-                                </div>
-                                <span id="carrito-contador"class="position-fixed end-0 bottom-50 translate-middle badge rounded-pill bg-danger">
+                                <span id="carrito-contador"class="translate-middle badge rounded-pill bg-danger position-absolute me-4">
                                     9
                                 </span>
+                                <i class="fas fa-shopping-cart c-red ms-2 mx-2 fs-3"></i>
                             </label>
                             <input id="cart" type="checkbox" class="dd-input" />
                             <div class="carrito"></div>
@@ -58,6 +54,22 @@
             </nav>
             <div class="bg-slider">
                 <h1 class="text-uppercase roboto text-center c-white">mis compras</h1>
+            </div>
+            <div id="table" class="d-flex justify-content-center fs-5 roboto table-borderless">
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="d-flex justify-content-center fs-4 text-uppercase mt-5 roboto w-100 bg-red c-white">
+                            <tr class="d-flex p-3 m-3 justify-content-center w-100">
+                                <th class="w-100 p-2 mx-3 my-2 justify-content-center d-flex">Producto</th>
+                                <th class="w-100 p-2 mx-3 my-2 justify-content-center d-flex">Precio</th>
+                                <th class="w-100 p-2 mx-3 my-2 justify-content-center d-flex">Cantidad</th>
+                                <th class="w-100 p-2 mx-3 my-2 justify-content-center d-flex">total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body-table" class="m-3 p-3 c-red fw-bold">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </header>
         <footer>
@@ -80,7 +92,6 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-        <script src="./js/owl.carousel.min.js"></script>
-        <script type="module" src="./js/index.js"> </script>
+        <script type="module" src="../js/compras.js"> </script>
     </body>
 </html>

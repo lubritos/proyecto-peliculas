@@ -17,14 +17,14 @@ function actualizarCarrito(listado) {
     document.getElementById('carrito-contador').innerHTML = listado.length;
     let html2 = '';
     for (let i = 0; i < listado.length; i++) {
-        html2 +=  `<div class="d-flex m-2 p-2 w-100 h-100 align-items-center justify-content-center">
+        html2 +=  `<div class="compra d-flex m-2 p-2 w-100 h-100 align-items-center justify-content-center">
                         <img src="https://image.tmdb.org/t/p/w500/${carrito[i].poster_path}" class="rounded mx-auto d-block" alt="" width="60">
-                        <div class="d-flex flex-column m-3 descripcion-carrito">
+                        <div class="d-flex flex-column m-3 descripcion-carrito fw-bold roboto">
                             <h5>${carrito[i].title}</h5>
                             <span>${carrito[i].precio}</span>
                             <span>${carrito[i].genero}</span>
                         </div>
-                            <i data-id="${i}" data-nombre="${carrito[i].title}"class="fw-bold fs-5 eliminar btn-danger fas fa-trash-alt"></i>
+                            <i data-id="${i}" data-nombre="${carrito[i].title}"class="fw-bold fs-5 eliminar me-3 fas fa-trash"></i>
                     </div>
                     `;
     }
@@ -32,7 +32,7 @@ function actualizarCarrito(listado) {
     <div class="d-flex flex-column overflow-scroll">
         ${html2}
         <div class="acciones d-flex justify-content-between m-3">
-            <button class="btn btn-warning text-white">Comprar</button>
+            <a href="./pages/compras.html" class="btn btn-warning text-white">Comprar</a>
             <button class="btn vaciar btn-danger">Vaciar</button>
         </div>
     </div>`;

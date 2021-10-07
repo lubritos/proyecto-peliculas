@@ -25,10 +25,10 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse roboto" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse roboto align-items-center" id="navbarSupportedContent">
                         <ul class="navbar-nav w-100 d-flex fs-5">
                             <li class="nav-item d-flex">
-                                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                                <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
                             </li>
                             <li class="nav-item d-flex">
                                 <a class="nav-link" href="./catalogo.html">Catálogo</a>
@@ -37,18 +37,16 @@
                                 <a class="nav-link" href="./tienda.html">Tienda</a>
                             </li>
                             <li class="nav-item d-flex">
-                                <a class="nav-link" href="#">Contacto</a>
+                                <a class="nav-link active" href="#">Contacto</a>
                             </li>
                         </ul>
                         <div class="d-flex">
-                            <i class="fas fa-search c-white ms-2 mx-2 fs-4"></i>
+                            <i class="fas fa-search c-white ms-2 mx-2 fs-3"></i>
                             <label class="btn-icon-cart" for="cart">
-                                <div class="position-fixed bottom-50 end-0 bg-orange rounded-circle p-4">
-                                    <i class="fas fa-shopping-cart c-white ms-2 mx-2 fs-4"></i>
-                                </div>
-                                <span id="carrito-contador"class="position-fixed end-0 bottom-50 translate-middle badge rounded-pill bg-danger">
+                                <span id="carrito-contador"class="translate-middle badge rounded-pill bg-danger position-absolute me-4">
                                     9
                                 </span>
+                                <i class="fas fa-shopping-cart c-red ms-2 mx-2 fs-3"></i>
                             </label>
                             <input id="cart" type="checkbox" class="dd-input" />
                             <div class="carrito"></div>
@@ -60,50 +58,56 @@
                 <h1 class="text-uppercase roboto text-center c-white">Contacto</h1>
             </div>
         </header>
-        <form action="">
-            <div class="d-flex flex-column align-items-center m-4 p-3">
-                <div class="d-flex justify-content-center w-50 m-3">
-                    <div class="m-3 bg-ligthgrey w-100">
-                        <input type="text" class="bg-ligthgrey form-control p-3" placeholder="Nombre..." aria-label="First name">
+        <main id="contacto" class="w-100 d-flex flex-column align-items-center justify-content-center">
+            <form action="" class="w-100">
+                <div class="form-contacto d-flex flex-column align-items-center m-4 p-3">
+                    <div class="d-flex justify-content-center w-50 m-3">
+                        <div class="m-3 bg-ligthgrey w-100 h-100">
+                            <input type="text" class="bg-ligthgrey form-control p-3" placeholder="Nombre..." aria-label="First name">
+                        </div>
+                        <div class="m-3 bg-ligthgrey w-100 h-100">
+                            <input type="text" class="bg-ligthgrey form-control p-3" placeholder="Apellido..." aria-label="Last name">
+                        </div>
                     </div>
-                    <div class="m-3 bg-ligthgrey w-100">
-                        <input type="text" class="bg-ligthgrey form-control p-3" placeholder="Apellido..." aria-label="Last name">
+                    <div class="d-flex justify-content-center w-50 m-3">
+                        <div class="m-3 bg-ligthgrey w-100 h-100">
+                            <input type="email" class="bg-ligthgrey form-control bg-ligthgrey p-3" id="exampleFormControlInput1" placeholder="Email...">
+                        </div>
+                        <div class="m-3 bg-ligthgrey w-100 h-100">
+                            <input type="phone" class="bg-ligthgrey form-control p-3" id="exampleFormControlInput2" placeholder="Telefono...">
+                        </div>
+                    </div>
+                    <div class="m-3 w-50 d-flex flex-column align-items-center bg-ligthgrey h-100">
+                        <textarea class="textarea bg-ligthgrey form-control justify-content-center p-3 m-3" id="validationTextarea" placeholder="Escribir Mensaje..." required></textarea>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <button class="btn btn-efect text-uppercase roboto fs-6 px-5 py-2">Enviar</button>
+                </div>
+            </form>
+            <div class="contacto d-flex flex-wrap w-100 align-items-center justify-content-center m-3 p-3">
+                <div class="d-flex m-3 p-3 item">
+                    <i class="fas fa-envelope fs-3 c-orange mx-3"></i>
+                    <div class="d-flex flex-column">
+                        <span class="roboto fs-6 fw-bold text-uppercase">Email</span>
+                        <span>sitiofantasia@gmail.com</span>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center w-50 m-3">
-                    <div class="m-3 bg-ligthgrey w-100">
-                        <label for="exampleFormControlInput1" class="form-label"></label>
-                        <input type="email" class="bg-ligthgrey form-control bg-ligthgrey p-3" id="exampleFormControlInput1" placeholder="Email...">
-                    </div>
-                    <div class="m-3 bg-ligthgrey w-100">
-                        <label for="exampleFormControlInput2" class="form-label"></label>
-                        <input type="phone" class="bg-ligthgrey form-control p-3" id="exampleFormControlInput2" placeholder="Telefono...">
+                <div class="d-flex m-3 p-3 item">
+                    <i class="fas fa-phone-alt fs-3 c-orange mx-3"></i>
+                    <div class="d-flex flex-column">
+                        <span class="roboto fs-6 fw-bold text-uppercase">Teléfono</span>
+                        <span>3514444444</span>
                     </div>
                 </div>
-                <div class="m-3 w-50 d-flex flex-column align-items-center bg-ligthgrey ">
-                    <label for="validationTextarea" class="form-label"></label>
-                    <textarea class="bg-ligthgrey form-control is-invalid justify-content-center p-3 m-3" id="validationTextarea" placeholder="Escribir Mensaje..." required></textarea>
-                    <div class="invalid-feedback">
-                        
+                <div class="d-flex m-3 p-3 item">
+                    <i class="fas fa-map-marker-alt fs-3 c-orange mx-3"></i>
+                    <div class="d-flex flex-column">
+                        <span class="roboto fs-6 fw-bold text-uppercase">Dirección</span>
+                        <span>calle fantasia 4444</span>
                     </div>
                 </div>
-                <button class="btn btn-efect text-uppercase roboto fs-6 px-5 py-2">Enviar</button>
             </div>
-        </form>
-        <div class="contacto d-flex flex-wrap w-100 align-items-center justify-content-center m-3 p-3">
-            <div class="d-flex m-3">
-                <i class="fas fa-envelope fs-3 c-orange"></i>
-                <span class="roboto fs-5">Email</span>
-            </div>
-            <div class="d-flex m-3">
-                <i class="fas fa-phone-alt fs-3 c-orange"></i>
-                <span class="roboto fs-5">Teléfono</span>
-            </div>
-            <div class="d-flex m-3">
-                <i class="fas fa-map-marker-alt fs-3 c-orange"></i>
-                <span class="roboto fs-5">Dirección</span>
-            </div>
-        </div>
+        </main>
         <footer>
             <div id="footer" class="bg-oscuro mt-3 mb-3">
                 <div class="d-flex flex-column align-items-center justify-content-evenly h-100">

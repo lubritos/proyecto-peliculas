@@ -105,3 +105,17 @@ $('.slider-2').owlCarousel({
         }
     }
 });
+
+$(window).scroll(function () {
+    const scroll = $(window).scrollTop();
+    // Do something
+    console.log(scroll);
+    if (scroll > 100) {
+        $('.btn-icon-cart').addClass('position-fixed bottom-0 end-0 m-3 c-red');
+        $('.carrito-contador').addClass('position-fixed end-0 bottom-0');
+    } else {
+        $('.btn-icon-cart').removeClass('position-fixed bottom-0 end-0 m-3 c-red');
+        $('.carrito-contador').removeClass('position-fixed');
+    }
+
+});
