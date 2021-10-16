@@ -3,18 +3,6 @@
     width: 100%;
     padding: 5rem;
 }
-.carrito {
-    display: none;
-    position: absolute;
-    top: 4rem;
-    right: 1rem;
-    z-index: 9;
-    background-color: #ffffff;
-    color: #d81a24;
-    padding: 1rem;
-    overflow: hidden;
-    max-height: 30rem;
-}
 .descripcion-carrito{
     width: 10rem;
 }
@@ -25,6 +13,9 @@
     img {
         min-width: 16rem;
     }
+}
+.mh-30 {
+    max-height: 30rem;
 }
 .dd-input {
     display: none;
@@ -66,14 +57,40 @@
         display: block !important;
     }
 }
+.search-tienda {
+    .search, 
+    select {
+        outline: none;
+        border: 1px solid rgb(250, 70, 4) !important;
+        &:focus {
+            border: 2px solid rgb(250, 70, 4) !important;
+            box-shadow: none;
+        }
+    }
+    
+}
+#busqueda-general {
+    margin-top: 2rem;
+    width: 20rem;
+    top: 3rem;
+    height: auto;
+    z-index: 99;
+    overflow: auto;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid rgba(246, 246, 246, 0.3);
+    
+}
+#resultados-busqueda {
+    // width: 26rem;
+    @extend #busqueda-general;
+}
 .bg-cards {
     background-color: rgba(0, 0, 0, 0.5);
     transition:2s;
 }
-#carrito-contador {
-    right: -2%;
-    bottom: 20%;
-}
+
 #banner-3 {
     background-image: url("../imagenes/banner-3.jpg");
     color: #ffff;
@@ -87,13 +104,15 @@
         }
     }
 }
+.btn-icon-cart {
+    z-index: 1;
+}
 .compra {
     &:hover{
         background-color: rgb(236, 102, 53) !important;
         color: #ffffff;
     }
 }
-
 .bg-oscuro {
     background-color: #151515 !important;
 }
@@ -119,6 +138,31 @@
     background-color: #f8f9fa;
     height: 100%;
 }
+.producto {
+    max-width: 40rem;
+    min-width: 25rem;
+}
+.table tbody tr {
+    border-bottom: 1px solid #eaeaea;
+}
+.table tbody tr td {
+    border: none;
+}
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+#total-compra {
+    width: 16rem;
+}
+.btn-continuar-compra {
+    width: 16rem;
+    &:focus {
+        box-shadow:none;
+    }
+    &:active {
+        box-shadow:8px 12px 5px -8px #f1444df1;
+    }
+}
 .contacto {
     height: 15rem;
     .item {
@@ -126,6 +170,9 @@
             color: #d81a24;
         }
     }
+}
+.container {
+    max-width: 60rem;
 }
 .form-contacto {
     width: 100%;

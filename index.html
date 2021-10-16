@@ -31,9 +31,6 @@
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item d-flex">
-                            <a class="nav-link" href="./pages/catalogo.html">Catálogo</a>
-                        </li>
-                        <li class="nav-item d-flex">
                             <a class="nav-link" href="./pages/tienda.html">Tienda</a>
                         </li>
                         <li class="nav-item d-flex">
@@ -41,15 +38,20 @@
                         </li>
                     </ul>
                     <div class="d-flex align-items-center">
-                        <i class="fas fa-search c-white ms-2 mx-2 fs-3"></i>
-                        <label class="btn-icon-cart" for="cart">
-                            <span id="carrito-contador"class="translate-middle badge rounded-pill bg-danger position-absolute me-4">
-                                9
-                            </span>
-                            <i class="fas fa-shopping-cart c-red m-3 fs-3"></i>
+                        <div class="d-flex aling-items-center position-relative">
+                            <i class="fas fa-search c-white ms-2 mx-2 fs-3"></i>
+                            <input type="text" id="buscador-general" class="rounded-pill p-1 border" placeholder="buscar"/>
+                            <div id="busqueda-general" class="position-absolute" style="display: none;"></div>
+                        </div>
+                        <label class="btn-icon-cart" for="cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div class="position-relative">
+                                <span id="carrito-contador"class="translate-middle badge rounded-pill bg-danger position-absolute start-100 bottom-0 me-4">
+                                    9
+                                </span>
+                                <i class="fas fa-shopping-cart c-red m-3 fs-3"></i>
+                            </div>
                         </label>
                         <input id="cart" type="checkbox" class="dd-input" />
-                        <div class="carrito"></div>
                     </div>
                 </div>
             </div>
@@ -106,17 +108,14 @@
                 Peliculas disponibles para ver online
             </h1>
             <div id="generos" class="d-flex flex-wrap m-3 justify-content-center">
-                <button id="horror" class="btn btn-efect fs-4 roboto text-uppercase m-3 p-2"> terror</button>
-                <button id="action" class="btn btn-efect fs-4 roboto text-uppercase m-3 p-2">accion</button>
-                <button id="adventure" class="btn btn-efect fs-4 roboto text-uppercase m-3 p-2">aventura</button>
-                <button id="mistery" class="btn btn-efect fs-4 roboto text-uppercase m-3 p-2">misterio</button>
-                <button id="fantasy" class="btn btn-efect fs-4 roboto text-uppercase m-3 p-2">fantasia</button>
-                <button id="all" class="btn btn-efect fs-4 roboto text-uppercase m-3 p-2">todos</button>
+                <button data-genero="horror" class="btn btn-gen btn-efect fs-4 roboto text-uppercase m-3 p-2"> terror</button>
+                <button data-genero="action" class="btn btn-gen btn-efect fs-4 roboto text-uppercase m-3 p-2">accion</button>
+                <button data-genero="adventure" class="btn btn-gen btn-efect fs-4 roboto text-uppercase m-3 p-2">aventura</button>
+                <button data-genero="mistery" class="btn btn-gen btn-efect fs-4 roboto text-uppercase m-3 p-2">misterio</button>
+                <button data-genero="fantasy" class="btn btn-gen btn-efect fs-4 roboto text-uppercase m-3 p-2">fantasia</button>
+                <button data-genero="all" class="btn btn-gen btn-efect fs-4 roboto text-uppercase m-3 p-2">todos</button>
             </div>
-            <div 
-                id="peliculas"
-                class="disponible d-flex flex-wrap justify-content-center"
-            />
+            <div id="peliculas" class="disponible d-flex flex-wrap justify-content-center"></div>
         </section>
         <section id="banner-2" class="bg-oscuro d-flex flex-wrap mt-3 mb-3">
             <div class="d-flex justify-content-center">
@@ -221,7 +220,7 @@
     <div id="triller" class="modal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body d-flex justify-content-center">
                     <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
                     <iframe 
                         id="video"
@@ -236,9 +235,30 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-uppercase c-red fw-bold roboto" id="exampleModalLabel">Peliculas Compradas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <div class="carrito w-100"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="./pages/compras.html" class="btn btn-warning text-white">Comprar</a>
+                    <button class="btn vaciar btn-danger">Vaciar</button>
+                </div>
+            </div>
+        </div>                                                       
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="./js/owl.carousel.min.js"></script>
     <script type="module" src="./js/index.js"> </script>
+    <script type="module" src="./js/slider.js"> </script>
+    <script type="module" src="./js/utils.js"></script>
 </body>
 </html>

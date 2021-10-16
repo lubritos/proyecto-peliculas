@@ -2,6 +2,7 @@ import { hideToast } from './toast.js'
 import './noticias.js'
 import { agregarCarrito, stockActual, vaciarCarrito } from './carrito.js';
 import { cargarProductos, listaPeliculas } from './app.js'
+import { ResultadoPeli } from './utils.js';
 
 let suscriptores = [];
 $(`#peliculas`).on('click', '.btn-comprar',function() {
@@ -10,6 +11,24 @@ $(`#peliculas`).on('click', '.btn-comprar',function() {
     agregarCarrito(peliculaComprada[0]);
     const stock = stockActual(peliculaComprada[0].stock, peliculaComprada[0].title);
     $(this).text(`Comprar (${stock})`);
+});
+
+$('#buscador-general').on('keyup', function() {
+    let html = '';
+    const busqueda = $(this).val();
+    if (!busqueda) return $('#busqueda-general').hide();
+    const resultados = listaPeliculas.filter((pelicula) => {
+        return pelicula.title.toLowerCase().includes(busqueda.toLowerCase());
+    });
+    resultados.map(peli => {
+        html += ResultadoPeli(peli);
+    });
+    if (resultados.length) {
+        $('#busqueda-general').html(html);
+    } else {
+        $('#busqueda-general').html('<div><p>Ninguna pelicula encontrada.</p></div>');
+    }
+    $('#busqueda-general').show();
 });
 
 $('#toast').on('click', '.btn-close', function() {
@@ -25,7 +44,7 @@ $('.carrito').on('click', '.eliminar' , function() {
     $(`[data-pelicula="${peliculaComprada[0].title}"]`).text(`Comprar (${stock})`);
 });
 
-$('.carrito').on('click', '.vaciar' , function() {
+$('.modal').on('click', '.vaciar' , function() {
     vaciarCarrito();
     cargarProductos(document.getElementById('peliculas'));
 });
@@ -40,82 +59,32 @@ $('#suscripcion').submit(function(evento){
     $('#mensaje').show();
 });
 
-$('#horror').on('click', function() {
-    $('.card').fadeOut();
-    $('.horror').fadeIn();
-});
-$('#action').on('click', function() {
-    $('.card').fadeOut();
-    $('.action').fadeIn();
-});
-$('#adventure').on('click', function() {
-    $('.card').fadeOut();
-    $('.adventure').fadeIn();
-});
-$('#fantasy').on('click', function() {
-    $('.card').fadeOut();
-    $('.fantasy').fadeIn();
-});
-$('#mistery').on('click', function() {
-    $('.card').fadeOut();
-    $('.mistery').fadeIn();
-});
-$('#all').on('click', function() {
-    $('.card').fadeIn();
-});
-
-$('.slider-1').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:1,
-            nav:false
-        },
-        1000:{
-            items:2,
-            nav:true,
-            loop:false
-        }
+$('.btn-gen').on('click', function() {
+    const genero = $(this).data('genero');
+    if (genero === 'all') {
+        $('.card').fadeIn();
+    } else {
+        $('.card').fadeOut();
+        $('.'+genero).fadeIn();
     }
 });
 
-$('.slider-2').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:2,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:true
-        },
-        1000:{
-            items:5,
-            nav:false,
-            loop:false
-        }
+$('#generos').on('change', function() {
+    const genero = $(this).val();
+    if (genero === 'all') {
+        $('.card').fadeIn();
+    } else {
+        $('.card').fadeOut();
+        $('.'+genero).fadeIn();
     }
 });
 
 $(window).scroll(function () {
     const scroll = $(window).scrollTop();
-    // Do something
-    console.log(scroll);
     if (scroll > 100) {
         $('.btn-icon-cart').addClass('position-fixed bottom-0 end-0 m-3 c-red');
-        $('.carrito-contador').addClass('position-fixed end-0 bottom-0');
     } else {
         $('.btn-icon-cart').removeClass('position-fixed bottom-0 end-0 m-3 c-red');
-        $('.carrito-contador').removeClass('position-fixed');
     }
 
 });

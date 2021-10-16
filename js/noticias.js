@@ -12,10 +12,10 @@ const cardNoticias = (noticias) => {
             </div>`;
 }
 
-$.get('./js/json/noticias.json' , function(data) {
-    console.log(data);
+$.get('/js/json/noticias.json' , function(data) {
     for (let i = 0; i < data.length; i++) {
         html3 +=  cardNoticias(data[i]);
     }
+    if(contenedorNoticias)
     contenedorNoticias.innerHTML = html3;
 });
